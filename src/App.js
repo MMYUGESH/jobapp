@@ -18,7 +18,7 @@ function App() {
         <div>
           <Route path="/home" exact component={Home} />
           <Route path="/companies" strict exact render={() => ((loggedIn) ? (<Companies />) : (<Redirect to="/login" />))} />
-          <Route path="/rec" strict exact render={() => ((loggedIn) ? (<Recruiters />) : (<Redirect to="/elogin" />))} />
+          <Route path="/rec" strict exact render={() => ((EloggedIn) ? (<Recruiters />) : (<Redirect to="/elogin" />))} />
           <Route path="/login" exact component={Login} />
           <Route path="/elogin" exact component={Elogin} />
         </div>

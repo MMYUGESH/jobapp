@@ -55,7 +55,7 @@ function Posts() {
     useEffect(() => {
         axios.get("https://colegedetails.herokuapp.com/").then(res => {
             setPost(res.data);
-            console.log(res.data);
+
         });
     }, []);
 
@@ -70,7 +70,7 @@ function Posts() {
                         <Row xs={1} md={2} className="g-4">
                             {post.map((post) => (
                                 <Col className="mt-1">
-                                    <Card>
+                                    <Card key={post._id}>
                                         <Card.Img variant="top" src={post.image} alt={post.CompanyName} />
                                         <Card.Body>
                                             <Card.Title>{post.CompanyName}</Card.Title>
@@ -79,27 +79,27 @@ function Posts() {
                                                 <Row>
                                                     <Col>
                                                         <h4>Place</h4>
-                                                        <p>{post.Place}</p>
+                                                        {post.Place}
                                                     </Col>
                                                     <Col>
                                                         <h4>Designation</h4>
-                                                        <p>{post.Designation}</p>
+                                                        {post.Designation}
                                                     </Col>
                                                 </Row>
                                                 <Row>
                                                     <Col>
                                                         <h4>Qulaification</h4>
-                                                        <p>{post.Qulaification}</p>
+                                                        {post.Qulaification}
                                                     </Col>
                                                     <Col>
                                                         <h4>Year Of Pass</h4>
-                                                        <p>{post.YearOfPass}</p>
+                                                        {post.YearOfPass}
                                                     </Col>
                                                 </Row>
                                                 <Row>
                                                     <Col>
                                                         <h4>Annual Salary</h4>
-                                                        <p>{post.AnnualSalary}</p>
+                                                        {post.AnnualSalary}
                                                     </Col>
                                                     <Col>
                                                         <Button variant="outline-warning" size="lg" onClick={handleShow} >Apply</Button>
@@ -207,7 +207,7 @@ function Posts() {
             </Container>
 
 
-        </div>
+        </div >
     )
 }
 

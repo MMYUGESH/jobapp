@@ -4,8 +4,9 @@ import { Card, Button } from 'react-bootstrap';
 function Home() {
     return (
         <div>
-            <h1>WELCOME</h1>
+
             <Card>
+                <h1>WELCOME</h1>
                 <Card.Body>
                     <Card.Title>Felix Career Platform</Card.Title>
                     <Card.Text>
